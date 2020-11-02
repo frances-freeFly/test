@@ -1,40 +1,27 @@
 {
-  "name": "haiji-server/order-server",
-  "description": "Something Awesome By EpetTech@2018",
+  "name": "frances/test",
+  "description": "Try to develop your own framework",
   "keywords": [
-    "epet",
+    "frances",
     "framework",
-    "component-based",
-    "swoole",
-    "high-performance",
-    "easy-expand"
+    "test-server"
   ],
-  "homepage": "http://projectdoc.epetbar.com/index.php?s=/130&page_id=2010",
   "authors": [
     {
-      "name": "speciallan",
-      "email": "liujingsheng@gutou.com"
+      "name": "frances",
+      "email": "frances@qq.com"
     }
   ],
   "require": {
     "php": ">=7.1",
-
-    "illuminate/encryption": "5.*",
-    "illuminate/hashing": "5.*",
-    "illuminate/translation": "5.*",
-    "illuminate/validation": "5.*",
-    "firebase/php-jwt": "^5.0",
-    "jenssegers/mongodb" : "^3.4.4"
+    "frances/framework": "dev-master"
   },
-  "repositories": [
-    {
+  "repositories": {
+    "packagist": {
       "type": "composer",
-      "url": "https://packagist.epetbar.com"
-    },
-    {
-      "packagist": false
+      "url": "https://packagist.phpcomposer.com"
     }
-  ],
+  },
   "config": {
     "secure-http": false
   },

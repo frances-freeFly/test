@@ -28,7 +28,7 @@ $server_argv = [
     'params'       => $command_argv,
 ];
 unset($command_argv, $command_file, $command_action);
-$Console = new \Framework\Bootstrap\Console();
+$Console = new \Frances\Bootstrap\Console();
 $Console->boot();
 unset($Console);
 
