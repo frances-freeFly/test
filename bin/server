@@ -1,0 +1,35 @@
+<?php
+/**
+ * Description 服务器快速启动脚本
+ * Created by PhpStorm
+ * Author: runfang.deng
+ * Date:   2020/11/2 10:08
+ */
+require_once dirname(__DIR__) . '/Applications/Config/globals_config.php';//全局配置加载
+require_once VENDER . 'autoload.php';//composer 加载
+$argv;//脚本的参数数组
+$command_argv   = $argv;
+$command_file   = array_shift($command_argv);//命令目录
+$command_action = array_shift($command_argv);//命令 【开启，停止，重启……】
+if (empty($command_file) || empty($command_action)) {
+    echo 'Command input error !';
+    echo "\n";
+}
+if (!in_array($command_action, COMMANDS)) {
+    echo 'This command does not exist !';
+    echo "\n";
+}
+require_once APP_CONFIG . 'swoole_config.php';//Swoole配置
+global $server_argv;
+$server_argv = [
+    'action'       => $command_action,
+    'commond_type' => 'server',
+    'server_type'  => 'http',
+    'params'       => $command_argv,
+];
+unset($command_argv, $command_file, $command_action);
+$Console = new \Framework\Bootstrap\Console();
+$Console->boot();
+unset($Console);
+
+
